@@ -14,14 +14,14 @@
 
 | Concept | Description |
 |---|---|
-| **Tokens** | Core tokens capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Compression** | Core compression capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Optimization** | Core optimization capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Prompt** | Core prompt capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Efficiency** | Core efficiency capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Cost** | Core cost capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Claude** | Core claude capability for Awesome-Collection-Token-Reduction-main workflows |
-| **Reduction** | Core reduction capability for Awesome-Collection-Token-Reduction-main workflows |
+| **Token Reduction** | Techniques to shrink prompt size without losing meaning |
+| **Caveman Mode** | Extreme compression — no articles, fragments OK |
+| **Summarization** | Distill context before injecting into prompt |
+| **Chunking** | Process large inputs in smaller batches |
+| **Cache** | Reuse expensive computations across turns |
+| **Prompt Pruning** | Remove redundant instructions and examples |
+| **Context Management** | Strategic window filling for max utility |
+| **Cost Tracking** | Monitor token spend per task |
 
 ---
 
@@ -46,19 +46,19 @@ claude 'what can Awesome-Collection-Token-Reduction-main do?'
 ## ☠️ STARTUPS / BUSINESSES
 
 - **Agencies**: automate tokens workflows for clients at scale
-- **Founders**: ship compression features 10x faster with Claude
-- **Freelancers**: deliver optimization work with AI-assisted precision
+- **Founders**: ship compression features 10x faster
+- **Freelancers**: deliver optimization work with AI precision
 
 ---
 
 ## Features
 
-- Tokens automation and orchestration
-- Compression automation and orchestration
-- Optimization automation and orchestration
-- Prompt automation and orchestration
-- Efficiency automation and orchestration
-- Cost automation and orchestration
+- Tokens automation
+- Compression automation
+- Optimization automation
+- Prompt automation
+- Efficiency automation
+- Cost automation
 
 ---
 
@@ -74,9 +74,14 @@ cd Awesome-Collection-Token-Reduction-main
 ## Usage
 
 ```bash
-# In Claude Code
-/Awesome-Collection-Token-Reduction-main
-claude 'tokens task here'
+# Activate skill in Claude Code
+claude --skill Awesome-Collection-Token-Reduction-main "your task here"
+
+# Quick workflow
+claude "tokens automation task"
+
+# Get help
+claude "what can Awesome-Collection-Token-Reduction-main do?"
 ```
 
 ---
@@ -85,11 +90,11 @@ claude 'tokens task here'
 
 | Variable | Description | Default |
 |---|---|---|
-| `API_KEY` | Primary API key for service access | Required |
+| `API_KEY` | Primary API key | Required |
 | `MODEL` | AI model to use | claude-3-5-sonnet |
-| `DEBUG` | Enable verbose debug output | false |
-| `MAX_TOKENS` | Max token budget per request | 8192 |
-| `TIMEOUT` | Request timeout in seconds | 30 |
+| `DEBUG` | Enable verbose debug | false |
+| `MAX_TOKENS` | Max token budget | 8192 |
+| `TIMEOUT` | Request timeout (sec) | 30 |
 | `LOG_LEVEL` | Logging verbosity | info |
 
 ---
@@ -98,40 +103,36 @@ claude 'tokens task here'
 
 ```
 Awesome-Collection-Token-Reduction-main/
-├── README.md           # This file
+├── README.md           # Documentation
 ├── SKILL.md            # Claude Code skill definition
-├── scripts/            # Automation and utility scripts
-├── templates/          # Output and prompt templates
-├── examples/           # Usage examples and demos
-├── tests/              # Unit and integration tests
+├── scripts/            # Automation scripts
+├── templates/          # Output templates
+├── examples/           # Usage examples
 └── docs/               # Extended documentation
-    ├── setup.md        # Setup guide
-    ├── api.md          # API reference
-    └── faq.md          # Frequently asked questions
 ```
 
 ---
 
 ## Examples
 
-### Basic Usage
+### Basic
 
 ```bash
-# Activate in Claude Code
-claude --skill Awesome-Collection-Token-Reduction-main "your task here"
+# Simple task
+claude --skill Awesome-Collection-Token-Reduction-main "tokens task"
 
-# With options
-claude --skill Awesome-Collection-Token-Reduction-main --verbose "detailed task"
+# Verbose
+claude --skill Awesome-Collection-Token-Reduction-main --verbose "detailed compression task"
 ```
 
-### Advanced Workflow
+### Advanced Pipeline
 
 ```bash
-# Chain with other skills
+# Chain skills
 claude --skill Awesome-Collection-Token-Reduction-main "step 1" | claude --skill summarize
 
-# Batch processing
-for item in list; do
+# Batch run
+for item in $(cat list.txt); do
   claude --skill Awesome-Collection-Token-Reduction-main "process $item"
 done
 ```
@@ -142,18 +143,18 @@ done
 
 | Issue | Cause | Fix |
 |---|---|---|
-| Auth fails | Invalid/expired API key | Re-export key in shell profile |
-| Timeout error | Network latency or large payload | Increase TIMEOUT value |
-| Empty output | Prompt too vague | Add more context to request |
-| Rate limit hit | Too many requests | Add delay between calls |
-| Model error | Unsupported model version | Update MODEL variable |
+| Auth fails | Invalid API key | Re-export key in shell profile |
+| Timeout | Network or large payload | Increase TIMEOUT value |
+| Empty output | Prompt too vague | Add more context |
+| Rate limit | Too many requests | Add delay between calls |
+| Model error | Unsupported version | Update MODEL variable |
 | Import error | Missing dependency | Run pip install -r requirements.txt |
 
 ---
 
 ## Comparison
 
-| Feature | This Skill | Alternative A | Alternative B |
+| Feature | This Skill | Alt A | Alt B |
 |---|---|---|---|
 | Claude Code native | ✅ | ❌ | ✅ |
 | Auto-activation | ✅ | ✅ | ❌ |
@@ -163,23 +164,21 @@ done
 
 ---
 
-## Contributing
-
-1. Fork this repo
-2. Create feature branch: `git checkout -b feat/your-feature`
-3. Commit changes: `git commit -m 'feat: add feature'`
-4. Push: `git push origin feat/your-feature`
-5. Open PR
-
----
-
 ## Changelog
 
 | Version | Changes |
 |---|---|
-| v2.0 | Major refactor, Claude 4 support |
-| v1.5 | Added auto-activation keywords |
+| v2.0 | Claude 4 support, auto-activation |
+| v1.5 | Added keyword triggers |
 | v1.0 | Initial release |
+
+---
+
+## Contributing
+
+1. Fork → feature branch → commit → PR
+2. Follow conventional commits: `feat:`, `fix:`, `docs:`
+3. Add tests for new features
 
 ---
 
@@ -191,7 +190,7 @@ done
 
 ## 📜 License
 
-MIT — free to use, modify, and distribute.
+MIT — free to use, modify, distribute.
 
 ---
 
